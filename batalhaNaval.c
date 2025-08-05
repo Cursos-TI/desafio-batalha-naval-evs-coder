@@ -8,7 +8,7 @@
 void inserirHabcone(int tabuleiroM[TAM][TAM], int hab[3][5], int inicioX, int inicioY){
     for(int x = 0; x < 3; x++){
         for(int y = 0; y < 5; y++){
-            tabuleiroM[inicioX + x][inicioY + y] += hab[x][y];
+            tabuleiroM[inicioX + x][inicioY + y] = hab[x][y];
         }
     }
 }
@@ -16,7 +16,7 @@ void inserirHabcone(int tabuleiroM[TAM][TAM], int hab[3][5], int inicioX, int in
 void inserirHaboctaedro(int tabuleiroM[TAM][TAM], int hab[3][5], int inicioX, int inicioY){
     for(int x = 0; x < 3; x++){
         for(int y = 0; y < 5; y++){
-            tabuleiroM[inicioX + x][inicioY + y] += hab[x][y];
+            tabuleiroM[inicioX + x][inicioY + y] = hab[x][y];
         }
     }
 }
@@ -24,7 +24,7 @@ void inserirHaboctaedro(int tabuleiroM[TAM][TAM], int hab[3][5], int inicioX, in
 void inserirHabcruz(int tabuleiroM[TAM][TAM], int hab[3][5], int inicioX, int inicioY){
     for(int x = 0; x < 3; x++){
         for(int y = 0; y < 5; y++){
-            tabuleiroM[inicioX + x][inicioY + y] += hab[x][y];
+            tabuleiroM[inicioX + x][inicioY + y] = hab[x][y];
         }
     }
 }
@@ -54,12 +54,18 @@ int main() {
     int nav1 [3] = {3, 3, 3};
     int nav2 [3] = {3, 3, 3};
 
-    for(int x = 0; x < 3; x++){
-        tab[0][1 + x] = nav1 [x];
-    }
+    printf("\nPosicionamento do Navio Horizontalgcc (3 partes):\n");
 
     for(int x = 0; x < 3; x++){
-        tab[2 + x][2] = nav1 [x];
+        tab[0][1 + x] = nav1 [x];
+        printf("Posição: (0,%d)\n", 1 + x);
+    }
+
+    printf("\nPosicionamento do Navio Vertical (3 partes):\n");
+
+    for(int x = 0; x < 3; x++){
+        tab[2 + x][2] = nav2 [x];
+        printf("Posição: (%d,2)\n", 2 + x);
     }
 
     printf("\n");
